@@ -110,19 +110,19 @@ Each client has two queue ; a queue for his application and another one for his 
   - GET request to main route “/”
   - Wrong GET request to non-supported path
 - Notification API (Request Success):
- - 1- All the notification body is provided (one target) 
- - 2- All the notification body is provided (many targets) 
- - 3- Default values is not provided 
- - 4- Default values is not provided (many targets) 
+  - 1- All the notification body is provided (one target) 
+  - 2- All the notification body is provided (many targets) 
+  - 3- Default values is not provided 
+  - 4- Default values is not provided (many targets) 
 - Notification API (Request failure):
- - 1- Message is not provided
- - 2- Message is not provided (many targets) 
- - 3- No targets in the notification body 
- - 4- Unknown provider is provided 5- No notification is supported in the post request
--Database APIs:
- - 1- Getting all the users 
- - 2- Getting Notifications with specific language 
- - 3- Getting Notifications with specific phone number 
- - 4- Getting Notifications with specific provider 
- - 5- Getting Notifications containing specific string
+  - 1- Message is not provided
+  - 2- Message is not provided (many targets) 
+  - 3- No targets in the notification body 
+  - 4- Unknown provider is provided 5- No notification is supported in the post request
+-Database APIs: 
+  - 1- Getting all the users 
+  - 2- Getting Notifications with specific language 
+  - 3- Getting Notifications with specific phone number 
+  - 4- Getting Notifications with specific provider 
+  - 5- Getting Notifications containing specific string
 
