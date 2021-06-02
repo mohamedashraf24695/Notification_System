@@ -42,39 +42,13 @@ use the following configuration
  * 3- queue : The queue name to recieve from it 
  * 
  ***************************************************************************/
- //Recieve_Fun(SmsNotifications,SmsNotifications,process.env.SMSNoti_AMPQ_SERVER_URL ,queue) ; 
+ //Recieve_Fun(SmsNotifications,process.env.SMSNoti_AMPQ_SERVER_URL ,queue) ; 
 
  /** ************************************************** */
 
- const readline = require('readline').createInterface({
-    input: process.stdin,
-    output: process.stdout
-  });
+console.log("This Image is Acting as a consumer on Push Notification Type and his number is +01012345678");
 
-  readline.question('What is the provider type \n for Push Notification press "P" \n and for SMS Notification press "S" ', notificationType => {
+console.log("Use Postman to make a post request for 'localhost:3000/api/pushNotification' By the Notification Service");
 
-    if(notificationType==="P" ||notificationType==="p"){
-        console.log("A");
-        //readline.close();
-
-
-        readline.question('Input your target phone number', target_phone => {
-            Recieve_Fun(PushNotifications,process.env.PushNoti_AMPQ_SERVER_URL ,target_phone) ;
-          });
-
-
-    }else if (notificationType==="S" ||notificationType==="s" ){
-        console.log("B");
-        readline.question('Input your target phone number: ', target_phone => {
-            Recieve_Fun(SmsNotifications,SmsNotifications,process.env.SMSNoti_AMPQ_SERVER_URL ,target_phone) ; 
-          });
-    }else {
-        console.log("C");
-        console.log("Wrong Answer");
-        readline.close();
-
-    }
-
-
-
-  });
+ Recieve_Fun(PushNotifications,process.env.PushNoti_AMPQ_SERVER_URL ,"+01012345678");
+// Recieve_Fun(SmsNotifications,process.env.SMSNoti_AMPQ_SERVER_URL ,"22");
