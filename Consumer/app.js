@@ -22,7 +22,7 @@ use the following configuration
  * 3- queue : The queue name to recieve from it 
  * 
  ***************************************************************************/
-Recieve_Fun(PushNotifications,process.env.PushNoti_AMPQ_SERVER_URL ,"+222") ; 
+//Recieve_Fun(PushNotifications,process.env.PushNoti_AMPQ_SERVER_URL ,"+222") ; 
 
 /** ************************************************** */
 
@@ -45,3 +45,36 @@ use the following configuration
  //Recieve_Fun(SmsNotifications,SMSNoti_AMPQ_SERVER_URL ,queue) ; 
 
  /** ************************************************** */
+
+ const readline = require('readline').createInterface({
+    input: process.stdin,
+    output: process.stdout
+  });
+
+  readline.question('What is the provider type \n for Push Notification press "P" \n and for SMS Notification press "S" ', notificationType => {
+
+    if(notificationType==="P" ||notificationType==="p"){
+        console.log("A");
+        //readline.close();
+
+
+        readline.question('Input your target phone number', target_phone => {
+            Recieve_Fun(PushNotifications,process.env.PushNoti_AMPQ_SERVER_URL ,target_phone) ;
+          });
+
+
+    }else if (notificationType==="S" ||notificationType==="s" ){
+        console.log("B");
+        readline.question('Input your target phone number: ', target_phone => {
+            Recieve_Fun(SmsNotifications,SMSNoti_AMPQ_SERVER_URL ,target_phone) ; 
+          });
+    }else {
+        console.log("C");
+        console.log("Wrong Answer");
+        readline.close();
+
+    }
+
+
+
+  });
