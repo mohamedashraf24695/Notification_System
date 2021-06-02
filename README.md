@@ -72,5 +72,35 @@ Each client has two queue ; a queue for his application and another one for his 
    #### To run tests:
  - npm run test ( using mocha.js in package.json as test runner)
 
+ ## How another microservices would contact this service to send a notification (Service APIs)
+ 
+  - Make a post request to send a notification with prober request body
+    - /api/pushNotification Method : POST Required body : {
+    - message : required
+    - provider : required , enum of ["Push Notification", "SMS Notification"] Push is the default
+    - target (The phonenumber/s that you want to send the Notification) : at least one
+    - isRead : not required (for future improvments for the service)
+    - language : enum of [En , Ar ,Fr] not required : En is the default
+-----------------------------------------------------------------------------------------------------
+   ### Returns :
+   - 1- if notification is successfuly sent : it will return Msg is successfuly statusCode :( 200)
+ - Errors :
+   - No targets : "No targets are Supported " statusCode :(400 Bad request)
+   - No message supported in the Notification : "No message is Supported" (400 Bad request)
+   - Other provider : "Notification is not a provided Notification type" statusCode : (400 Bad request)
+
+- 2- Returns all the notifications in the database Method : GET
+    - /notificationDatabase/readAllNotification/allUsers
+3- Returns all the notifications sent to a phonenumber Method : GET
+    - /notificationDatabase/byPhoneNumber/:phoneNumber
+4- returns all the notifications by a certain language Method : GET
+    - /notificationDatabase/byLanguage/:language
+5- returns all the notifications by a certain provider Method : GET
+    - /notificationDatabase/byProvider/:provider
+6- returns all the notifications that contains a certain string ( example : (essa)------> returns notifications contain : ( message )) Method : GET     
+    - /notificationDatabase/notificationContains/:notification
+
+
+
 
 
