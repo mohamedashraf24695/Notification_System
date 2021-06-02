@@ -46,9 +46,21 @@ use the following configuration
 
  /** ************************************************** */
 
-console.log("This Image is Acting as a consumer on Push Notification Type and his number is +01012345678");
+
 
 console.log("Use Postman to make a post request for 'localhost:3000/api/pushNotification' By the Notification Service");
 
- Recieve_Fun(PushNotifications,process.env.PushNoti_AMPQ_SERVER_URL ,"+01012345678");
-// Recieve_Fun(SmsNotifications,process.env.SMSNoti_AMPQ_SERVER_URL ,"22");
+
+
+console.log("This Image is Acting as a consumer on Push Notification Type and his number is +01987654321");
+
+Recieve_Fun(PushNotifications,process.env.PushNoti_AMPQ_SERVER_URL ,"+01987654321");
+
+
+
+//console.log("This Image is Acting as a consumer on SMS Notification Type and his number is +01012345678");
+
+//Recieve_Fun(SmsNotifications,process.env.SMSNoti_AMPQ_SERVER_URL ,"+01012345678");
+
+
+
