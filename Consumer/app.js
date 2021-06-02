@@ -42,7 +42,7 @@ use the following configuration
  * 3- queue : The queue name to recieve from it 
  * 
  ***************************************************************************/
- //Recieve_Fun(SmsNotifications,SMSNoti_AMPQ_SERVER_URL ,queue) ; 
+ //Recieve_Fun(SmsNotifications,SmsNotifications,process.env.SMSNoti_AMPQ_SERVER_URL ,queue) ; 
 
  /** ************************************************** */
 
@@ -66,7 +66,7 @@ use the following configuration
     }else if (notificationType==="S" ||notificationType==="s" ){
         console.log("B");
         readline.question('Input your target phone number: ', target_phone => {
-            Recieve_Fun(SmsNotifications,SMSNoti_AMPQ_SERVER_URL ,target_phone) ; 
+            Recieve_Fun(SmsNotifications,SmsNotifications,process.env.SMSNoti_AMPQ_SERVER_URL ,target_phone) ; 
           });
     }else {
         console.log("C");
