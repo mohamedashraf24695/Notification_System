@@ -119,7 +119,7 @@ Each client has two queue ; a queue for his application and another one for his 
   - 2- Message is not provided (many targets) 
   - 3- No targets in the notification body 
   - 4- Unknown provider is provided 5- No notification is supported in the post request
--Database APIs: 
+- Database APIs: 
   - 1- Getting all the users 
   - 2- Getting Notifications with specific language 
   - 3- Getting Notifications with specific phone number 
