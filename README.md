@@ -10,7 +10,8 @@ using message queuing system.
 
 ## Architecture diagram 
 
-![image](https://user-images.githubusercontent.com/42626745/120558885-69436280-c400-11eb-85dd-06d862f64aa6.png)
+![Notification_System_Arch](https://user-images.githubusercontent.com/42626745/123695661-1a4fe800-d85b-11eb-8749-77b0baed89b1.png)
+
 
 
 ## How to run it (Main idea) 
